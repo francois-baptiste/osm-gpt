@@ -9,39 +9,15 @@ function useMapboxMap(options: any) {
   useEffect(() => {
     if (!options?.renderMap || !!map) return;
 
-    const opts = {
-      container: mapRef.current,
-      preserveDrawingBuffer: true,
-      style: {
-        version: 8,
-
-        sources: {
-          osm: {
-            type: "raster",
-            tiles: [
-              "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png",
-              // 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-            ],
-            tileSize: 256,
-
-            maxzoom: 18,
-          },
-        },
-        layers: [
-          {
-            id: "osm",
-            type: "raster",
-            source: "osm",
-            layout: {
-              visibility: "visible",
-            },
-          },
-        ],
-      },
-      ...options,
-    };
-
-    const mapInstance = new mapgl.Map(opts);
+    const mapInstance = new mapgl.Map(
+      {
+        container: mapRef.current,
+        preserveDrawingBuffer: true,
+        style: 'https://demotiles.maplibre.org/style.json',
+        center: [0, 0],
+        zoom: 1
+      }
+    );
     // mapInstance.addControl(
     //   new mapgl.NavigationControl(),
     //   'top-left'
