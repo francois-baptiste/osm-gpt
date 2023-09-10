@@ -11,7 +11,7 @@ function useMapboxMap(options: any) {
 
     const mapInstance = new mapgl.Map(
       {
-        container: mapRef.current,
+        container: mapRef.current!,
         preserveDrawingBuffer: true,
         style: 'https://demotiles.maplibre.org/style.json',
         center: [0, 0],
