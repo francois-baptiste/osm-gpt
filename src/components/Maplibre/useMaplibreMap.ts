@@ -13,7 +13,7 @@ function useMapboxMap(options: any) {
       {
         container: mapRef.current!,
         preserveDrawingBuffer: true,
-        style: 'https://demotiles.maplibre.org/style.json',
+        style: 'https://www.zeroimmo.com/out/style.json',
         center: [0, 0],
         zoom: 1
       }

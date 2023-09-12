@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-export-optimize-images",
     "start": "next start",
     "lint": "next lint"
   },
@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.4",
-    "@types/uuid": "^9.0.3"
+    "@types/uuid": "^9.0.3",
+    "next-export-optimize-images": "^3.2.0"
   }
 }

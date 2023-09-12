@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withExportImages = require('next-export-optimize-images')
+
+module.exports = withExportImages({
   output: 'export',
-  //   ReactStrictMode: false,
+  basePath: '/out',
   reactStrictMode: false,
     swcMinify: false,
-};
-
-module.exports = nextConfig;
+});
